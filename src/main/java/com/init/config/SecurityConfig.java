@@ -20,14 +20,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/init","/kafkaProducer").permitAll()
+                .antMatchers( "/init","/vehicle").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();
+                .permitAll()
+                .and().csrf().disable();
     }
 
     @Bean
