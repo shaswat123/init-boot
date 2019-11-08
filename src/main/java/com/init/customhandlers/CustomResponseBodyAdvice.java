@@ -17,6 +17,7 @@ public class CustomResponseBodyAdvice implements ResponseBodyAdvice<String> {
         System.out.println("In supports() method of " + getClass().getSimpleName());
         return returnType.getContainingClass() == VehicleServiceController.class && returnType.getParameterType() == String.class;
     }
+
     @Override
     public String beforeBodyWrite(String answer, MethodParameter returnType, MediaType selectedContentType,
                                   Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request,
@@ -25,4 +26,5 @@ public class CustomResponseBodyAdvice implements ResponseBodyAdvice<String> {
 
 
         return answer;
+    }
 }
