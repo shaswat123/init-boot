@@ -6,6 +6,12 @@ public class Student {
     private String studentRollNo;
     private String studentClass;
 
+    public Student(String studentName, String studentRollNo, String studentClass) {
+        this.studentName = studentName;
+        this.studentRollNo = studentRollNo;
+        this.studentClass = studentClass;
+    }
+
     public String getStudentName() {
         return studentName;
     }
